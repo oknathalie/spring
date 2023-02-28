@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfumes Primaverales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #fddede;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 400px;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+        .card-header {
+            background-color: #f8a5c2;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-sm-6">
+        <form th:action="@{/save}" th:object="${perfume}" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h3>¿AGREGAS?</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input th:field="*{id}" type="text" class="form-control" id="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input th:field="*{nombre}" type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="casa">Casa</label>
+                        <input th:field="*{casa}" type="text" class="form-control" id="casa">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
